@@ -1,4 +1,5 @@
 from time import perf_counter
+from typing import List
 
 """
 https://leetcode.com/problems/two-sum/
@@ -37,13 +38,8 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 """
 
 
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         output = []
         map = {}
 

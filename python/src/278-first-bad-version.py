@@ -34,18 +34,14 @@ Constraints:
 """
 
 
-class Solution(object):
+class Solution:
     # The isBadVersion API is already defined for you.
     # @param version, an integer
     # @return a bool
-    def isBadVersion(self, version):
+    def isBadVersion(self, version: int) -> bool:
         return version >= 4
 
-    def firstBadVersion(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+    def firstBadVersion(self, n: int) -> int:
         start = 1
         end = n
         while start < end:

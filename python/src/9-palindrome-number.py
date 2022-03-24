@@ -33,27 +33,19 @@ Follow up: Could you solve it without converting the integer to a string?
 """
 
 
-class Solution(object):
-    def isPalindromeString(self, x):
-        """
-        :type x: int
-        :rtype: bool
-        """
+class Solution:
+    def isPalindromeString(self, x: int) -> bool:
         if x < 0:
             return False
         return True if int(str(x)[::-1]) == x else False
 
-    def isPalindrome(self, x):
-        """
-        :type x: int
-        :rtype: bool
-        """
+    def isPalindrome(self, x: int) -> bool:
         if x < 0:
             return False
 
         return self.reverseNumber(x, 0) == x
 
-    def reverseNumber(self, x, dup_x):
+    def reverseNumber(self, x: int, dup_x: int) -> int:
         # print("x: {}, dup_x: {}".format(x, dup_x))
         if x == 0:
             return dup_x

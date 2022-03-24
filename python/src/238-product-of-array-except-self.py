@@ -1,4 +1,5 @@
 from time import perf_counter
+from typing import List
 
 """
 https://leetcode.com/problems/product-of-array-except-self/
@@ -31,12 +32,8 @@ for space complexity analysis.)
 """
 
 
-class Solution(object):
-    def productExceptSelf(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
         output = [1]
 
         for i in range(len(nums) - 1):

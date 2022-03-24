@@ -31,13 +31,9 @@ s consists of English letters, digits, symbols and spaces.
 """
 
 
-class Solution(object):
+class Solution:
     # First solution
-    # def lengthOfLongestSubstring(self, s):
-    #     """
-    #     :type s: str
-    #     :rtype: int
-    #     """
+    # def lengthOfLongestSubstring(self, s: str) -> int:
     #     if not s:
     #         return 0
     #
@@ -54,7 +50,7 @@ class Solution(object):
     #     return max_len
 
     # Stolen solution: https://redquark.org/leetcode/0003-longest-substring-without-repeating-characters/
-    def lengthOfLongestSubstring(self, s):
+    def lengthOfLongestSubstring(self, s: str) -> int:
         if not s or s == '':
             return 0
 

@@ -1,4 +1,5 @@
 from time import perf_counter
+from typing import List
 
 """
 https://leetcode.com/problems/binary-search/
@@ -29,14 +30,9 @@ nums is sorted in ascending order.
 """
 
 
-class Solution(object):
+class Solution:
     # dichotomie search
-    def search(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
+    def search(self, nums: List[int], target: int) -> int:
         a = 0
         b = len(nums) - 1
         while a <= b:

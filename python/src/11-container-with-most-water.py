@@ -1,4 +1,5 @@
 from time import perf_counter
+from typing import List
 
 """
 https://leetcode.com/problems/container-with-most-water/
@@ -30,13 +31,9 @@ n == height.length
 """
 
 
-class Solution(object):
+class Solution:
     # Stolen solution: https://leetcode.com/problems/container-with-most-water/discuss/1868783/Python-With-Best-Explanation
-    def maxArea(self, height):
-        """
-        :type height: List[int]
-        :rtype: int
-        """
+    def maxArea(self, height: List[int]) -> int:
         l = 0
         r = len(height) - 1
         max_amount = 0

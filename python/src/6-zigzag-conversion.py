@@ -46,16 +46,31 @@ s consists of English letters (lower-case and upper-case), ',' and '.'.
 
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
-        pass
+        if numRows == 1:
+            return s
+        else:
+            lines = [''] * numRows
+            pattern = (2 * (numRows - 1))  # pattern length, the sequence restarts every 2 * (numRows - 1)
+            for i in range(len(s)):
+                mod = i % pattern  # modulo to get the index of the line
+                line = mod if mod < numRows else (2 * numRows - mod - 2)  # vertical line else diagonal line
+                lines[line] += s[i]
+            return ''.join(lines)
 
 
 if __name__ == '__main__':
     solution = Solution()
     tic = perf_counter()
 
-    print(solution.convert('PAYPALISHIRING', 3))
-    print(solution.convert('PAYPALISHIRING', 4))
-    print(solution.convert('A', 1))
+    s1 = solution.convert('PAYPALISHIRING', 3)
+    print(s1)
+    assert s1 == 'PAHNAPLSIIGYIR'
+    s2 = solution.convert('PAYPALISHIRING', 4)
+    print(s2)
+    assert s2 == 'PINALSIGYAHRPI'
+    s3 = solution.convert('A', 1)
+    print(s3)
+    assert s3 == 'A'
 
     toc = perf_counter()
     print(f"Done in {(perf_counter() - tic) * 1000000:0.0f}ms")

@@ -37,7 +37,7 @@ class Solution:
         output = [1]
 
         for i in range(len(nums) - 1):
-            output.insert(i + 1, output[i] * nums[i])
+            output.append(output[i] * nums[i])
 
         product = 1
 
@@ -52,8 +52,12 @@ if __name__ == '__main__':
     solution = Solution()
     tic = perf_counter()
 
-    print(solution.productExceptSelf([1, 2, 3, 4]))
-    print(solution.productExceptSelf([-1, 1, 0, -3, 3]))
+    s1 = solution.productExceptSelf([1, 2, 3, 4])
+    print(s1)
+    assert s1 == [24, 12, 8, 6]
+    s2 = solution.productExceptSelf([-1, 1, 0, -3, 3])
+    print(s2)
+    assert s2 == [0, 0, 9, 0, 0]
 
     toc = perf_counter()
     print(f"Done in {(perf_counter() - tic) * 1000000:0.0f}ms")

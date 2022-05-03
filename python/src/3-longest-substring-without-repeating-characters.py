@@ -32,22 +32,21 @@ s consists of English letters, digits, symbols and spaces.
 
 
 class Solution:
-    # First solution
-    # def lengthOfLongestSubstring(self, s: str) -> int:
-    #     if not s:
-    #         return 0
-    #
-    #     max_len = 0
-    #     temp_len = 1
-    #     for i in range(len(s)):
-    #         for j in range(i + 1, len(s)):
-    #             if s[j] not in s[i:j]:
-    #                 temp_len += 1
-    #             else:
-    #                 break
-    #         max_len = max(max_len, temp_len)
-    #         temp_len = 1
-    #     return max_len
+    def lengthOfLongestSubstringBrtuteForce(self, s: str) -> int:
+        if not s:
+            return 0
+
+        max_len = 0
+        temp_len = 1
+        for i in range(len(s)):
+            for j in range(i + 1, len(s)):
+                if s[j] not in s[i:j]:
+                    temp_len += 1
+                else:
+                    break
+            max_len = max(max_len, temp_len)
+            temp_len = 1
+        return max_len
 
     # Stolen solution: https://redquark.org/leetcode/0003-longest-substring-without-repeating-characters/
     def lengthOfLongestSubstring(self, s: str) -> int:
